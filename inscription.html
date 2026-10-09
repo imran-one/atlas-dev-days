@@ -1,28 +1,121 @@
 <!DOCTYPE html>
+<html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <title> Atlas Dev </title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlas Dev Days | Inscription</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@600&family=Inter:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<main>
-    <header>
-        <nav>
-            <img src="img" alt="commit"> <!--7at link-->
-            <a href="index.html">Accueil</a>
-            <a href="programme.html">Programme</a>
-            <a href="intervenents.html"> Intervenents</a>
-            <button type="submit">
-                <a href="inscription.html">Inscription</a>
-            </button>
 
-        </nav>
-    </header>
-    <body>
-        <img src="#" alt="commit"> <!--7at link-->
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="assets/icons/logo1.png" alt="Atlas Dev Days, retour à l'accueil">
+    </a>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="programme.html">Programme</a></li>
+        <li><a href="intervenants.html">Intervenants</a></li>
+        <li><a href="inscription.html" aria-current="page">Inscription</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Inscription</h1>
+
+    <form action="#" method="get">
+      <img src="assets/icons/logo1.png" alt="">
+
+      <div>
+        <label for="nom">Nom complet</label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom" required minlength="3">
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="vous@exemple.fr" required>
+      </div>
+
+      <div>
+        <label for="tel">Téléphone</label>
+        <input type="tel" id="tel" name="tel" placeholder="+212 6 00 00 00 00" required>
+      </div>
+
+      <div>
+        <label for="profil">Profil</label>
+        <select id="profil" name="profil" required>
+          <option value="">Sélectionner une option</option>
+          <option value="etudiant">Étudiant·e</option>
+          <option value="developpeur">Développeur·se</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+
+      <fieldset>
+        <legend>Ateliers souhaités</legend>
         <div>
-            <h4>Nom complet</h4>
-        <h3>votre nom</h3>
+          <div>
+            <input type="checkbox" id="atelier-css" name="ateliers" value="css">
+            <label for="atelier-css">HTML/CSS avancé</label>
+          </div>
+          <div>
+            <input type="checkbox" id="atelier-git" name="ateliers" value="git">
+            <label for="atelier-git">Git et GitHub</label>
+          </div>
+          <div>
+            <input type="checkbox" id="atelier-a11y" name="ateliers" value="accessibilite">
+            <label for="atelier-a11y">Accessibilité</label>
+          </div>
         </div>
-    </body>
-</main>
+      </fieldset>
+
+      <fieldset>
+        <legend>Journée(s) de participation</legend>
+        <div>
+          <div>
+            <input type="radio" id="jour-1" name="jour" value="jour1" required>
+            <label for="jour-1">Jour 1</label>
+          </div>
+          <div>
+            <input type="radio" id="jour-2" name="jour" value="jour2">
+            <label for="jour-2">Jour 2</label>
+          </div>
+          <div>
+            <input type="radio" id="jour-both" name="jour" value="les-deux">
+            <label for="jour-both">Les deux</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div>
+        <input type="checkbox" id="consentement" name="consentement" required>
+        <label for="consentement">J'accepte</label>
+      </div>
+
+      <button type="submit">Envoyer</button>
+    </form>
+
+    <aside>
+      <h2>Informations pratiques</h2>
+      <p>Adresse : Youcode, Nador</p>
+      <p>Dates : 28-29 octobre 2026, de 9h à 18h</p>
+      <p>Accès : parking gratuit à proximité</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© Atlas Dev Days - Tous droits réservés 2026</p>
+    <a href="#">Contact</a>
+  </footer>
+
+</body>
+
+</html>
