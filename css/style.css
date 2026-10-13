@@ -484,7 +484,7 @@ fieldset label,
   font-weight: 500;
 }
 
-/* ===== Mobile ===== */
+/* Mobile */
 @media (max-width: 600px) {
   .menu {
     gap: 16px;
