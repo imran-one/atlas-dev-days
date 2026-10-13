@@ -1,4 +1,4 @@
-/* ===== Variables ===== */
+/* Variables */
 :root {
   --color-text: #111111;
   --color-light: #f5f5f5;
@@ -13,7 +13,7 @@
   --space: 16px;
 }
 
-/* ===== Reset léger ===== */
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -34,7 +34,7 @@ a {
   text-decoration: none;
 }
 
-/* ===== Base ===== */
+/* Base */
 body {
   min-height: 100vh;
   display: flex;
@@ -45,7 +45,20 @@ body {
   line-height: 1.5;
 }
 
-/* ===== Header ===== */
+main {
+  flex: 1;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Header */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -89,14 +102,78 @@ body {
 
 .menu .menu-cta:hover {
   background-color: var(--color-white);
+  color: var(--color-text);
 }
 
-/* ===== Hero ===== */
-.hero {
-  flex: 1;                      /* prend la place entre header et footer */
+/* Footer */
+.site-footer {
   display: flex;
-  justify-content: center;      /* carte au centre horizontal */
-  align-items: center;          /* carte au centre vertical */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space);
+  padding: 32px 5%;
+  background-color: var(--color-header);
+  color: var(--color-white);
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Bouton */
+.button {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--color-white);
+}
+
+/* Focus visible (clavier) */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--color-text);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--color-white);
+}
+
+/* Sections (accueil) */
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 5%;
+}
+
+.section h2 {
+  font-family: var(--font-title);
+  font-size: 32px;
+}
+
+/* Accueil : hero */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 460px;
   padding: 40px 5%;
   background-image: url("../assets/images/accueil.jpg");
@@ -127,46 +204,284 @@ body {
   font-weight: 700;
 }
 
-/* ===== Bouton ===== */
-.button {
-  margin-top: 8px;
-  padding: 12px 28px;
-  border-radius: 12px;
-  background-color: var(--color-accent);
-  color: var(--color-text);
-  font-family: var(--font-title);
-  font-size: 20px;
-  font-weight: 600;
+/* Accueil : chiffres clés */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
 }
 
-.button:hover {
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 160px;
+  padding: 24px;
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-white);
+  font-size: 18px;
+}
+
+.stat-number {
+  color: var(--color-header);
+  font-family: var(--font-title);
+  font-size: 48px;
+  line-height: 1;
+}
+
+/* Accueil : à propos */
+.text-block {
+  max-width: 700px;
+  text-align: center;
+}
+
+/* Cartes intervenants (accueil + intervenants) */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.speaker-card {
+  flex: 1 1 260px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 0 16px 0;
+  overflow: hidden;
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
   background-color: var(--color-white);
 }
 
-/* ===== Footer ===== */
-.site-footer {
+.speaker-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.speaker-card h2,
+.speaker-card h3,
+.speaker-card p,
+.speaker-card a {
+  padding: 0 16px;
+}
+
+.speaker-card h2,
+.speaker-card h3 {
+  font-family: var(--font-title);
+  font-size: 22px;
+}
+
+.speaker-job {
+  color: var(--color-header);
+  font-weight: 600;
+}
+
+.speaker-link {
+  margin-top: auto;
+  color: var(--color-header);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.speaker-link:hover {
+  color: var(--color-text);
+}
+
+/* Page Intervenants */
+.page-intervenants {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 40px 5%;
+}
+
+.page-intervenants h1 {
+  font-family: var(--font-title);
+  font-size: 40px;
+}
+
+/* Page Programme */
+.page-programme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 5%;
+  background-color: var(--color-header);
+  background-image: url("../assets/images/programme.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.logo-center {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  padding: 12px 24px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.day {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.day h2 {
+  color: var(--color-white);
+  font-family: var(--font-title);
+  font-size: 32px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.day-card {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 24px;
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.talk {
+  display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: var(--space);
-  padding: 32px 5%;
-  background-color: var(--color-header);
-  color: var(--color-white);
+  padding: 16px 0;
+}
+
+.talk + .talk {
+  border-top: 1px solid rgba(17, 17, 17, 0.2);
+}
+
+.talk-time {
+  width: 80px;
+  color: var(--color-header);
   font-family: var(--font-title);
   font-size: 20px;
   font-weight: 600;
 }
 
-.site-footer a:hover {
-  text-decoration: underline;
+.talk-title {
+  flex: 1 1 250px;
+  font-size: 18px;
 }
 
-/* ===== Focus visible (clavier) ===== */
-a:focus {
-  outline: 3px solid var(--color-text);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 5px var(--color-white);
+.talk-speaker {
+  flex: 0 1 200px;
+  font-weight: 600;
+}
+
+.badge {
+  padding: 4px 16px;
+  border-radius: 12px;
+  background-color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ===== Page Inscription ===== */
+.page-inscription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 5%;
+  background-color: var(--color-header);
+  background-image: url("../assets/images/inscription.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.page-inscription h1 {
+  color: var(--color-white);
+  font-family: var(--font-title);
+  font-size: 40px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.form-card,
+.info-card {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+  padding: 32px;
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  background-color: rgba(8, 134, 184, 0.78);
+}
+
+.info-card h2 {
+  font-family: var(--font-title);
+  font-size: 24px;
+}
+
+.form-logo {
+  width: 200px;
+  align-self: center;
+}
+
+/* Champs */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: none;
+}
+
+label,
+legend {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-text);
+  border-radius: 24px;
+  background-color: #f3f3f3;
+  color: var(--color-text);
+  font: inherit;
+}
+
+/* Cases à cocher et boutons radio (dans les fieldset) */
+fieldset > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space);
+}
+
+fieldset > div > div,
+.form-card > div:not(.field) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+fieldset label,
+.form-card > div:not(.field) label {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 /* ===== Mobile ===== */
@@ -177,5 +492,14 @@ a:focus {
 
   .menu a {
     font-size: 18px;
+  }
+
+  .talk-time {
+    width: 100%;
+  }
+
+  .form-card,
+  .info-card {
+    padding: 24px;
   }
 }

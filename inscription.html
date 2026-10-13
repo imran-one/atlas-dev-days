@@ -23,33 +23,33 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="programme.html">Programme</a></li>
         <li><a href="intervenants.html">Intervenants</a></li>
-        <li><a href="inscription.html" aria-current="page">Inscription</a></li>
+        <li><a class="menu-cta" href="inscription.html" aria-current="page">Inscription</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main class="page-inscription">
     <h1>Inscription</h1>
 
-    <form action="#" method="get">
-      <img src="assets/icons/logo1.png" alt="">
+    <form class="form-card" action="#" method="get">
+      <img class="from-logo" src="assets/icons/logo1.png" alt="">
 
-      <div>
+      <div class="field">
         <label for="nom">Nom complet</label>
         <input type="text" id="nom" name="nom" placeholder="Votre nom" required minlength="3">
       </div>
 
-      <div>
+      <div class="field">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="vous@exemple.fr" required>
       </div>
 
-      <div>
+      <div class="field">
         <label for="tel">Téléphone</label>
         <input type="tel" id="tel" name="tel" placeholder="+212 6 00 00 00 00" required>
       </div>
 
-      <div>
+      <div class="field">
         <label for="profil">Profil</label>
         <select id="profil" name="profil" required>
           <option value="">Sélectionner une option</option>
@@ -59,7 +59,7 @@
         </select>
       </div>
 
-      <fieldset>
+      <fieldset class="field">
         <legend>Ateliers souhaités</legend>
         <div>
           <div>
@@ -77,7 +77,7 @@
         </div>
       </fieldset>
 
-      <fieldset>
+      <fieldset class="field">
         <legend>Journée(s) de participation</legend>
         <div>
           <div>
@@ -100,10 +100,11 @@
         <label for="consentement">J'accepte</label>
       </div>
 
-      <button type="submit">Envoyer</button>
+      <button class="button" type="submit">Envoyer</button>
+
     </form>
 
-    <aside>
+    <aside class="info-card">
       <h2>Informations pratiques</h2>
       <p>Adresse : Youcode, Nador</p>
       <p>Dates : 28-29 octobre 2026, de 9h à 18h</p>
@@ -113,7 +114,7 @@
 
   <footer class="site-footer">
     <p>© Atlas Dev Days - Tous droits réservés 2026</p>
-    <a href="#">Contact</a>
+    <a href="#">contact</a>
   </footer>
 
 </body>
