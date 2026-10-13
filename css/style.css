@@ -363,7 +363,7 @@ textarea:focus {
   padding: 16px 0;
 }
 
-.talk + .talk {
+.talk+.talk {
   border-top: 1px solid rgba(17, 17, 17, 0.2);
 }
 
@@ -465,33 +465,50 @@ textarea {
 }
 
 /* Cases à cocher et boutons radio (dans les fieldset) */
-fieldset > div {
+fieldset>div {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space);
 }
 
-fieldset > div > div,
-.form-card > div:not(.field) {
+fieldset>div>div,
+.check-box {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-fieldset label,
-.form-card > div:not(.field) label {
+label {
   font-size: 16px;
   font-weight: 500;
 }
 
 /* Mobile */
-@media (max-width: 600px) {
+@media (min-width: 400px) and (max-width: 600px) {
   .menu {
     gap: 16px;
   }
 
   .menu a {
     font-size: 18px;
+  }
+
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: var(--space) 2%;
+    background-color: var(--color-header);
+  }
+
+
+  .logo {
+
+    margin-left: 180px;
+    height: 64px;
+    width: auto;
   }
 
   .talk-time {
